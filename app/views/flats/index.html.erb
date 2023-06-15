@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row justify-items-center">
+    <div class="col-12 "><h1 class="justify-content-center">All our Flats (<%= @flats.length %>)</h1></div>
+  </div>
+  <div class="row justify-content-center justify-items-around m-0">
+    <% @flats.each_with_index do |flat, i| %>
+      <div class="col-3 card m-2 p-0">
+        <div class="" style="height: 180px; background-image: url('<%=flat.image%>?random=<%=i%>'); background-size: cover"></div>
+        <div class="bg-light p-3">
+          <h4><%= flat.name %></h4>
+          <p><%= flat.address %></p>
+          <div class="d-flex">
+            <div class="flex align-items-center"><i class="fa-solid fa-users"></i><%= flat.number_of_guest %></div>
+            <div class="flex align-items-center ms-3"><i class="fa-solid fa-euro-sign"></i><%= flat.price_per_night %></div>
+          </div>
+        </div>
+      <div class="bg-white p-3">
+        <%= link_to "More info", flat_path(flat), class: "text-primary text-decoration-none" %>
+        <%= link_to "Edit", edit_flat_path(flat), class: "text-warning ms-3 text-decoration-none" %>
+        <%= link_to "Delete", flat_path(flat),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger text-decoration-none"
+            %>
+      </div>
+      </div>
+      <% end %>
+  </div>
+</div>

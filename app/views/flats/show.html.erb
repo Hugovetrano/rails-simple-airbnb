@@ -1,0 +1,14 @@
+<div class="card-trip m-5">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div class="w-50">
+      <h2><%= @flat.name %></h2>
+      <p><strong><%= @flat.address %></strong></p>
+      <p><%= @flat.description %></p>
+    </div>
+    <div class="d-flex" class="card-trip-pricing">
+            <div class="flex align-items-center"><i class="fa-solid fa-users "></i><%= @flat.number_of_guest %></div>
+            <div class="flex align-items-center ms-3"><%= @flat.price_per_night %><i class="fa-solid fa-euro-sign"></i></div>
+          </div>
+  </div>
+</div>
